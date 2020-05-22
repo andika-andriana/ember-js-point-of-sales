@@ -1,0 +1,23 @@
+List of Supplier<br>
+
+{{#link-to "supplier.create"}}Add New Supplier{{/link-to}}
+
+<hr>
+
+{{#if model}}
+  <ul>
+    {{#each model as |item|}}
+      <li>
+        Nama: {{item.name}}<br>
+        Alamat: {{item.address}}<br>
+        {{#link-to "supplier.detail" item.id}}Show Detail{{/link-to}}
+        |
+        {{#link-to "supplier.edit" item.id}}Edit{{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <h5>Data tidak ditemukan</h5>
+{{/if}}
+
+{{outlet}}

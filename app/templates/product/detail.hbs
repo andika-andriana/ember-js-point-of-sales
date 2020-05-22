@@ -1,0 +1,13 @@
+Detail of Product<br>
+
+<hr>
+
+Tipe Handphone: {{model.name}}<br>
+Description: {{model.description}}<br>
+Purchase Price: {{model.purchasePrice}}<br>
+Sell Price: {{model.sellPrice}}<br>
+Ringtone Mode: {{if model.isPolyponic "Polyponic" "Monoponic"}}<br>
+
+{{#link-to "product"}}Back to List{{/link-to}}
+
+{{outlet}}

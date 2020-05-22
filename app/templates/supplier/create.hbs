@@ -1,0 +1,12 @@
+Add Supplier<br>
+
+<hr>
+
+Nama: <Input @type="text" @value={{model.name}}/><br>
+Alamat: <Textarea @value={{model.address}} cols="80" rows="6"/><br>
+
+<button>Save</button><br>
+
+{{#link-to "supplier"}}Back to List{{/link-to}}
+
+{{outlet}}

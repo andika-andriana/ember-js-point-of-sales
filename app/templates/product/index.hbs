@@ -1,0 +1,22 @@
+List of Product<br>
+
+{{#link-to "product.create"}}Create New Product{{/link-to}}
+
+<hr>
+
+{{#if model}}
+  <ul>
+    {{#each model as |item|}}
+      <li>
+        Tipe Handphone: {{item.name}}<br>
+        Ringtone: {{if item.isPolyponic "Polyponic" "Monoponic"}}<br>
+        {{#link-to "product.detail" item.id}}Show Detail{{/link-to}} | 
+        {{#link-to "product.edit" item.id}}Edit{{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <h5>Data tidak ditemukan</h5>
+{{/if}}
+
+{{outlet}}
