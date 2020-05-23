@@ -2,14 +2,8 @@ Create Product<br>
 
 <hr>
 
-Tipe Handphone: <Input @type="text" @value={{model.name}}/><br>
-Description: <Textarea @value={{model.description}} cols="80" rows="6"/><br>
-Purchase Price: <Input @type="numeric" @value={{model.purchasePrice}}/><br>
-Sell Price: <Input @type="numeric" @value={{model.sellPrice}}/><br>
-Ringtone Mode: <Input @type="checkbox" @checked={{model.isPolyponic}}/><br>
+<Product @model={{model}}/>
 
-<button>Save</button><br>
+<button {{action 'saveData'}}>Save</button><br>
 
 {{#link-to "product"}}Back to List{{/link-to}}
-
-{{outlet}}
