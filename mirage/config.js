@@ -113,12 +113,12 @@ export default function() {
   this.post('/products', 'product');
   this.put('/products/:id', 'product');
   this.patch('/products/:id', 'product');
-  this.delete('/products/:id', 'product');
+  this.del('/products/:id', 'product');
 
   // static-API supplier-data
   this.get('/suppliers', 'supplier');
   this.post('/suppliers', 'supplier');
   this.put('/suppliers/:id', 'supplier');
   this.patch('/suppliers/:id', 'supplier');
-  this.delete('/suppliers/:id', 'supplier');
+  this.del('/suppliers/:id', 'supplier');
 }

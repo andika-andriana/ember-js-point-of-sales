@@ -7,5 +7,5 @@ export default Controller.extend({
     }
   }],
   page:1,
-  perPage:5, 
+  perPage:3,
 });

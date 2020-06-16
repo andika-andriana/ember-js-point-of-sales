@@ -14,14 +14,24 @@ Router.map(function() {
       this.route('create',{path: '/create'});
       this.route('edit',{path: '/edit/:id'});
       this.route('detail',{path: '/detail/:id'});
-  });
+    }
+  );
   this.route('supplier', {path: 'supplier'},
     function() {
       this.route('index', {path: '/'});
       this.route('create', {path: '/create'});
       this.route('edit', {path: '/edit/:id'});
       this.route('detail', {path: '/detail/:id'});
-  });
+    }
+  );
+  this.route('point-of-sale', {path: 'pointofsale'}, 
+    function() {
+      this.route('index', {path: '/'});
+      this.route('create', {path: '/create'});
+      this.route('edit', {path: '/edit/:id'});
+      this.route('detail', {path: '/detail/:id'});
+   }
+  );
 });
 
 export default Router;
