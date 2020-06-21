@@ -6,7 +6,7 @@ export default Controller.extend({
     this.model = this.store.createRecord('product');
   },
   actions: {
-    saveData(){
+    saveProduct(){
       this.model.save().then(()=>{
         alert("Sukses CREATE Product");
       }).catch((error)=>{

@@ -7,4 +7,7 @@ export default function(server) {
   // server.createList('post', 10);
   server.createList('product', 10);
   server.createList('supplier', 10);
+  server.createList('pointOfSale', 5).forEach(pointOfSale => {
+    server.createList('pointOfSalesDetail', 3, {pointOfSale})
+  });
 }

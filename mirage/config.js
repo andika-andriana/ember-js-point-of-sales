@@ -121,4 +121,26 @@ export default function() {
   this.put('/suppliers/:id', 'supplier');
   this.patch('/suppliers/:id', 'supplier');
   this.del('/suppliers/:id', 'supplier');
+
+  // static-API POS
+  this.get('/point-of-sales', 'pointOfSale');
+  this.get('/point-of-sales/:id', (schema, request)=>{
+    return schema.pointOfSales.find(request.params.id);
+  });
+  this.post('/point-of-sales', (schema, request)=>{
+    var params = JSON.parse(request.requestBody);
+    var db = schema.db;
+    var result = db.pointOfSales.insert(params);
+    return schema.pointOfSales.find(result.id);
+  });
+  this.put('/point-of-sales/:id');
+  this.patch('/point-of-sales/:id', 'pointOfSale');
+  this.del('/point-of-sales/:id', 'pointOfSale');
+
+  // static-API POS Detail (child)
+  this.get('/point-of-sales-details', 'pointOfSalesDetail');
+  this.post('/point-of-sales-details', 'pointOfSalesDetail');
+  this.put('/point-of-sales-details/:id');
+  this.patch('/point-of-sales-details/:id', 'pointOfSalesDetail');
+  this.del('/point-of-sales-details/:id', 'pointOfSalesDetail');
 }

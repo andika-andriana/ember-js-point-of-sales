@@ -1,0 +1,13 @@
+{{#if model.id}}
+  Ubah Data Produk
+{{else}}
+  Buat Data Produk Baru
+{{/if}}
+
+<hr>
+
+<Product @model={{model}}/>
+
+<button {{action "saveProduct"}}>Save</button><br>
+
+{{#link-to "product"}}Back to List{{/link-to}}

@@ -3,10 +3,10 @@ import Controller from '@ember/controller';
 export default Controller.extend({
   init(){
     this._super(...arguments);
-    this.model = this.store.createRecord('Supplier');
+    this.model = this.store.createRecord('supplier');
   },
   actions: {
-    saveData(){
+    saveSupplier(){
       this.model.save().then(()=>{
         alert("Sukses CREATE Supplier");
       }).catch((error)=>{

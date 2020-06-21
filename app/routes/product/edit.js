@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-  templateName:'product/create',
+  templateName: 'product/input',
   model({id}){
     return this.store.peekRecord('product', id);
   }

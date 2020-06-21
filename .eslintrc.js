@@ -15,6 +15,8 @@ module.exports = {
     browser: true
   },
   rules: {
+    // its for enable console.log @development
+    'no-console': 0 // 0 for Off, 1 for On.
   },
   overrides: [
     // node files
@@ -42,7 +44,7 @@ module.exports = {
 
         // this can be removed once the following is fixed
         // https://github.com/mysticatea/eslint-plugin-node/issues/77
-        'node/no-unpublished-require': 'off'
+        'node/no-unpublished-require': 'off',
       })
     }
   ]

@@ -6,17 +6,26 @@ List of Product<br>
 
 {{#if model}}
   <ul>
-    {{#each model as |item|}}
+    {{#each model as |modprod|}}
       <li>
-        Tipe Handphone: {{item.name}}<br>
-        Ringtone: {{if item.isPolyponic "Polyponic" "Monoponic"}}<br>
-        {{#link-to "product.detail" item.id}}Show Detail{{/link-to}} | 
-        {{#link-to "product.edit" item.id}}Edit{{/link-to}}
+        Tipe Handphone: {{modprod.name}}<br>
+        Ringtone: {{if modprod.isPolyponic "Polyponic" "Monoponic"}}<br>
+        {{#link-to "product.detail" modprod.id}}Show Detail{{/link-to}} | 
+        {{#link-to "product.edit" modprod.id}}Edit{{/link-to}} |
+        <button {{action "deleteProduct" modprod.id}}>Delete</button>
       </li>
     {{/each}}
   </ul>
 {{else}}
   <h5>Data tidak ditemukan</h5>
 {{/if}}
-
+<hr>
+<BsButtonGroup
+  @value={{page}}
+  @type="radio"
+  @onChange={{action (mut page)}} as |bg|>
+  <bg.button @value="1">1</bg.button>
+  <bg.button @value="2">2</bg.button>
+  <bg.button @value="3">3</bg.button>
+</BsButtonGroup>
 {{outlet}}

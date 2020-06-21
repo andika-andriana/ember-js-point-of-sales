@@ -1,0 +1,28 @@
+<BsModal @onSubmit={{action "submit"}} @open={{this.showModal}} @onHidden={{action "hideModal"}} class="right add-data-modal" as |Modal|>
+  <Modal.header>
+    <button class="btn app-btn-default p-0 d-md-none">x</button>
+    <span class="pt-1 ml-2">{{title}}</span>
+  </Modal.header>
+  <Modal.body>
+    <div class="row">
+      <div class="col-12">
+        <div class="col-12 mt-2">
+          <label class="label-input">Produk</label>
+          <Input @type="text" @value={{this.model.product}} class="form-control"/>
+        </div>
+        <div class="col-12 mt-2">
+          <label class="label-input">Jumlah</label>
+          <Input @type="text" @value={{this.model.qty}} class="form-control"/>
+        </div>
+        <div class="col-12 mt-2">
+          <label class="label-input">Harga</label>
+          <Input @type="text" @value={{this.model.price}} class="form-control"/>
+        </div>
+      </div>
+    </div>
+  </Modal.body>
+  <Modal.footer>
+    <BsButton @onClick={{action Modal.submit}} @type="success" class="btn">Simpan</BsButton>
+    <BsButton @onClick={{action Modal.close}} @type="danger" class="btn">Tutup</BsButton>
+  </Modal.footer>
+</BsModal>

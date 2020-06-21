@@ -1,19 +1,11 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{!-- <WelcomePage /> --}}
-{{!-- Feel free to remove this! --}}
-<h1>Point Of Sales</h1>
-<p>Learning Everywere</p>
-<hr>
-{{#link-to "index"}}
-  Home
-{{/link-to}}
-|
-{{#link-to "product"}}
-  Product
-{{/link-to}}
-|
-{{#link-to "supplier"}}
-  Supplier
-{{/link-to}}
-<hr>
-{{outlet}}
+<div class="container-fluid">
+  <div class="row bg-dark">
+    <div class="col-lg-12">
+      <p class="text-center text-light display-4 pt-2 fontsize-25">Point Of Sales</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  {{outlet}}
+</div>

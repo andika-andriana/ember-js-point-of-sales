@@ -1,0 +1,15 @@
+{{#if model.id}}
+  Ubah Data Supplier
+{{else}}
+  Buat Data Supplier Baru
+{{/if}}
+
+<hr>
+
+<Supplier @model={{model}}/>
+
+<button  {{action "saveSupplier"}}>Save</button><br>
+
+{{#link-to "supplier"}}Back to List{{/link-to}}
+
+{{outlet}}

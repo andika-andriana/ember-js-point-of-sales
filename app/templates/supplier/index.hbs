@@ -6,18 +6,26 @@ List of Supplier<br>
 
 {{#if model}}
   <ul>
-    {{#each model as |item|}}
+    {{#each model as |modsupp|}}
       <li>
-        Nama: {{item.name}}<br>
-        Alamat: {{item.address}}<br>
-        {{#link-to "supplier.detail" item.id}}Show Detail{{/link-to}}
-        |
-        {{#link-to "supplier.edit" item.id}}Edit{{/link-to}}
+        Nama: {{modsupp.name}}<br>
+        Alamat: {{modsupp.address}}<br>
+        {{#link-to "supplier.detail" modsupp.id}}Show Detail{{/link-to}} |
+        {{#link-to "supplier.edit" modsupp.id}}Edit{{/link-to}} |
+        <button {{action "deleteSupplier" modsupp.id}}>Delete</button>
       </li>
     {{/each}}
   </ul>
 {{else}}
   <h5>Data tidak ditemukan</h5>
 {{/if}}
-
+<hr>
+<BsButtonGroup
+  @value={{page}}
+  @type="radio"
+  @onChange={{action (mut page)}} as |bg|>
+  <bg.button @value="1">1</bg.button>
+  <bg.button @value="2">2</bg.button>
+  <bg.button @value="3">3</bg.button>
+</BsButtonGroup>
 {{outlet}}

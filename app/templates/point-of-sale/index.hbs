@@ -1,1 +1,39 @@
-{{outlet}}
+<div class="row mt-3">
+  <div class="col-lg-6">
+    <h3 class="text-info">Data: Point Of Sales</h3>
+  </div>
+</div>
+<hr class="bg-info">
+{{#if model}}
+  <table class="table table-bordered table-stripped">
+    <thead>
+      <tr class="text-center bg-info text-light">
+        <th>Tanggal</th>
+        <th>Supplier</th>
+        <th>Total Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |pos|}}
+        <tr>
+          <td>{{moment-format pos.transactionDate "DD-MMM-YYYY"}}</td>
+          <td>{{pos.supplier.name}}</td>
+          <td>{{pos.totalPrice}}</td>
+          <td>
+            {{#link-to "point-of-sale.detail" pos.id class="btn btn-info"}}Detail{{/link-to}}
+            {{#link-to "point-of-sale.edit" pos.id class="btn btn-warning"}}Edit{{/link-to}}
+            <button {{action "deletePOS" pos.id}} class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+{{else}}
+  <h5>Data tidak ditemukan</h5>
+{{/if}}
+
+{{#link-to "point-of-sale.create" class="btn btn-success"}}
+  Buat Transaksi Baru
+{{/link-to}}

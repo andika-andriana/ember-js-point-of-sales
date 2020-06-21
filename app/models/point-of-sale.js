@@ -4,7 +4,7 @@ import { computed } from '@ember/object';
 
 export default Model.extend({
   transactionDate: DS.attr('date'),
-  supplier: DS.belongsTo('supplier'),
+  supplier: DS.belongsTo(),
   remarks: DS.attr('string'),
   pointOfSalesDetail: DS.hasMany(),
   

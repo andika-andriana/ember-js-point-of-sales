@@ -9,6 +9,6 @@ export default Model.extend({
   pointOfSale: DS.belongsTo(),
   
   subtotal: computed('qty', 'price', function(){
-    return this.get('qty') * this.get('price')
+    return this.get('qty') * this.get('price');
   })
 });
